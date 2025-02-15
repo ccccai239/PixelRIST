@@ -1,1 +1,1 @@
-from .model.MGMSA import MgmsaForCausalLM
+from .model.MIRAS import MgmsaForCausalLM
