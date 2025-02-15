@@ -15,18 +15,18 @@ from mgm.constants import (DEFAULT_IMAGE_TOKEN, IGNORE_INDEX,
 from mgm.mm_utils import tokenizer_image_token
 from segment_anything.utils.transforms import ResizeLongestSide
 
-from MGMSA.utils.conversation import get_default_conv_template
-from MGMSA.utils.data_processing import get_mask_from_json
-from MGMSA.utils.reason_seg_dataset_v1 import ReasonSegDataset
-from MGMSA.utils.refer import REFER
-from MGMSA.utils.refer_seg_dataset_v1 import ReferSegDataset
-from MGMSA.utils.sem_seg_dataset_v1 import SemSegDataset
-from MGMSA.utils.caption_dataset import CocoCapDataset
-from MGMSA.utils.utils_v1 import (DEFAULT_IM_END_TOKEN, DEFAULT_IM_START_TOKEN,
+from MIRAS.utils.conversation import get_default_conv_template
+from MIRAS.utils.data_processing import get_mask_from_json
+from MIRAS.utils.reason_seg_dataset_v1 import ReasonSegDataset
+from MIRAS.utils.refer import REFER
+from MIRAS.utils.refer_seg_dataset_v1 import ReferSegDataset
+from MIRAS.utils.sem_seg_dataset_v1 import SemSegDataset
+from MIRAS.utils.caption_dataset import CocoCapDataset
+from MIRAS.utils.utils_v1 import (DEFAULT_IM_END_TOKEN, DEFAULT_IM_START_TOKEN,
                     DEFAULT_IMAGE_TOKEN)
-from MGMSA.utils.vqa_dataset import VQADataset
-from MGMSA.utils.vg_dataset_v1 import VGDataset
-from MGMSA.utils.allava_dataset import ALLaVADataset
+from MIRAS.utils.vqa_dataset import VQADataset
+from MIRAS.utils.vg_dataset_v1 import VGDataset
+from MIRAS.utils.allava_dataset import ALLaVADataset
 
 
 def collate_fn(
