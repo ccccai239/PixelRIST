@@ -8,11 +8,11 @@ from torch.cuda.amp import autocast
 from transformers import BitsAndBytesConfig, CLIPVisionModel
 #from utils_gres import (DEFAULT_IM_END_TOKEN, DEFAULT_IM_START_TOKEN,DEFAULT_IMAGE_PATCH_TOKEN)
 #from utils_v1 import (DEFAULT_IM_END_TOKEN, DEFAULT_IM_START_TOKEN,DEFAULT_IMAGE_PATCH_TOKEN)
-from MGMSA.utils.utils_v1 import (DEFAULT_IM_END_TOKEN, DEFAULT_IM_START_TOKEN,DEFAULT_IMAGE_PATCH_TOKEN)
+from MIRAS.utils.utils_v1 import (DEFAULT_IM_END_TOKEN, DEFAULT_IM_START_TOKEN,DEFAULT_IMAGE_PATCH_TOKEN)
 from mgm.model.language_model.mgm_llama import (MGMLlamaForCausalLM,MGMLlamaModel)
 #from .llava.model.language_model.llava_llama import (LlavaLlamaForCausalLM,LlavaLlamaModel)
 #from .segment_anything.build_sam import build_sam_vit_h
-from MGMSA.model.segment_anything.build_sam import build_sam_vit_h
+from MIRAS.model.segment_anything.build_sam import build_sam_vit_h
 #from .segment_anything.build_sam import build_sam_vit_h
 LAYER_WEIGHTS = torch.tensor([0.0000, 0.0000, 0.1250, 0.0000, 0.0000, 0.0000, 0.1250, 0.0000, 0.0000,
         0.0000, 0.1250, 0.0000, 0.0000, 0.0000, 0.1250, 0.0000, 0.0000, 0.0000,
