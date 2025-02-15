@@ -281,7 +281,7 @@ class HybridDataset(torch.utils.data.Dataset):
         cap_data="coco/annotations",
         explanatory=0.1,
         vg_data="VG|train",
-        multiturn_data="/datas/caidexian/myfiles/processed_multiturn_tot_01.json",
+        multiturn_data="/datas/myfiles/processed_multiturn_tot_01.json",
         args=None,
 
     ):
