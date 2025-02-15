@@ -25,7 +25,7 @@ from torch.utils.tensorboard import SummaryWriter
 from MGMSA_stage2 import MgmsaForCausalLM
 #from model.mgm import conversation as conversation_lib
 from mgm import conversation as conversation_lib
-from MGMSA.utils.dataset_stage2 import HybridDataset, ValDataset, collate_fn
+from MIRAS.utils.dataset_stage2 import HybridDataset, ValDataset, collate_fn
 from MGMSA.utils.utils import (DEFAULT_IM_END_TOKEN, DEFAULT_IM_START_TOKEN,
                          AverageMeter, ProgressMeter, Summary, dict_to_cuda,
                          intersectionAndUnionGPU)
@@ -58,7 +58,7 @@ def parse_args(args):
     parser.add_argument(
         "--vision-tower", default="/datas/huggingface/clip-vit-large-patch14-336", type=str
     )
-    parser.add_argument("--vision-tower-aux", default="/datas/caidexian/CLIP-convnext_large_d_320-laion2B-s29B-b131K-ft-soup", type=str)
+    parser.add_argument("--vision-tower-aux", default="/datas/CLIP-convnext_large_d_320-laion2B-s29B-b131K-ft-soup", type=str)
     parser.add_argument("--load_in_8bit", action="store_true", default=False)
     parser.add_argument("--load_in_4bit", action="store_true", default=False)
     parser.add_argument(
@@ -78,7 +78,7 @@ def parse_args(args):
     parser.add_argument("--allava_data", default="ALLAVA/ALLaVA-Instruct-VFLAN-4V.json", type=str)
     parser.add_argument("--reason_seg_data", default="ReasonSeg|train", type=str)
     parser.add_argument("--caption_data", default="coco/annotations", type=str)
-    parser.add_argument("--multiturn_data", default="/datas/caidexian/myfiles/processed_multiturn_tot_01.json", type=str)
+    parser.add_argument("--multiturn_data", default="/datas/myfiles/processed_multiturn_tot_01.json", type=str)
     parser.add_argument("--val_dataset", default="Multiturn|val", type=str) #refcocog|umd|val / refclef/refcoco/refcoco+|unc|val / ReasonSeg|val
     parser.add_argument("--dataset_dir", default="./dataset", type=str)
     parser.add_argument("--log_base_dir", default="./runs", type=str)
@@ -364,7 +364,7 @@ def main(args):
             args.val_dataset,
             args.image_size,
             args,
-            "/datas/caidexian/myfiles/processed_val_01.json"
+            "/datas/myfiles/processed_val_01.json"
         )
         print(
             f"Training with {len(train_dataset)} examples and validating with {len(val_dataset)} examples."
