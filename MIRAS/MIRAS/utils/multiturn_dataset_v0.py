@@ -48,7 +48,7 @@ class MultiTurnDataset(torch.utils.data.Dataset):
         image_size: int = 224,
         exclude_val=False,
         mask_data="/datas/multimodal_datasets/GRESDataset/textcaps/masks",
-        multiturn_data="/datas/caidexian/myfiles/processed_multiturn_tot_01.json",
+        multiturn_data="/datas/myfiles/processed_multiturn_tot_01.json",
         #explanatory=0.1,
         args=None,
     ): 
