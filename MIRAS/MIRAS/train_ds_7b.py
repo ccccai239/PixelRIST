@@ -20,8 +20,8 @@ from torch.utils.tensorboard import SummaryWriter
 from MGMSA_ import MgmsaForCausalLM
 #from model.mgm import conversation as conversation_lib
 from mgm import conversation as conversation_lib
-from MGMSA.utils.dataset import HybridDataset, ValDataset, collate_fn
-from MGMSA.utils.utils import (DEFAULT_IM_END_TOKEN, DEFAULT_IM_START_TOKEN,
+from MIRAS.utils.dataset import HybridDataset, ValDataset, collate_fn
+from MIRAS.utils.utils import (DEFAULT_IM_END_TOKEN, DEFAULT_IM_START_TOKEN,
                          AverageMeter, ProgressMeter, Summary, dict_to_cuda,
                          intersectionAndUnionGPU)
 
@@ -45,14 +45,14 @@ def parse_args(args):
     parser.add_argument(
         "--vision-tower", default="/datas/huggingface/clip-vit-large-patch14-336", type=str
     )
-    parser.add_argument("--vision-tower-aux", default="/datas/caidexian/CLIP-convnext_large_d_320-laion2B-s29B-b131K-ft-soup", type=str)
+    parser.add_argument("--vision-tower-aux", default="/datas/CLIP-convnext_large_d_320-laion2B-s29B-b131K-ft-soup", type=str)
     parser.add_argument("--load_in_8bit", action="store_true", default=False)
     parser.add_argument("--load_in_4bit", action="store_true", default=False)
     parser.add_argument(
         "--dataset", default="sem_seg||refer_seg||vqa||reason_seg||caption||vg||multisteps", type=str
     )#sem_seg||refer_seg||vqa||reason_seg||caption
     parser.add_argument("--sample_rates", default="9,6,3,2,2", type=str)
-    parser.add_argument("--multihop_reason_seg_data", default="/datas/caidexian/myfiles/multi_hop_reason_seg_v0.jsonl", type=str)
+    parser.add_argument("--multihop_reason_seg_data", default="/datas/myfiles/multi_hop_reason_seg_v0.jsonl", type=str)
     parser.add_argument(
         "--sem_seg_data",
         default="ade20k||cocostuff||pascal_part||paco||mapillary",
@@ -66,11 +66,11 @@ def parse_args(args):
     parser.add_argument("--allava_data", default="ALLAVA/ALLaVA-Instruct-VFLAN-4V.json", type=str)
     parser.add_argument("--reason_seg_data", default="ReasonSeg|train", type=str)
     parser.add_argument("--caption_data", default="coco/annotations", type=str)
-    parser.add_argument("--multiturn_data", default="/datas/caidexian/myfiles/processed_multiturn_tot_01.json", type=str)
+    parser.add_argument("--multiturn_data", default="/datas/myfiles/processed_multiturn_tot_01.json", type=str)
     parser.add_argument("--val_dataset", default="ReasonSeg|val", type=str) #refcocog|umd|val / refclef/refcoco/refcoco+|unc|val / ReasonSeg|val
     parser.add_argument("--dataset_dir", default="./dataset", type=str)
     parser.add_argument("--log_base_dir", default="./runs", type=str)
-    parser.add_argument("--exp_name", default="mgmsa", type=str)
+    parser.add_argument("--exp_name", default="MIRAS", type=str)
     parser.add_argument("--epochs", default=10, type=int)
     parser.add_argument("--steps_per_epoch", default=500, type=int)
     parser.add_argument(
