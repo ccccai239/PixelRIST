@@ -34,7 +34,7 @@ def preprocess_multimodal(source, mm_use_im_start_end):
 
 def parse_args(args):
     parser = argparse.ArgumentParser(description="MGMSA chat")
-    parser.add_argument("--version", default="/datas/caidexian/MGMSA-stage2-NOOBJ-7B")
+    parser.add_argument("--version", default="/datas/MGMSA-stage2-NOOBJ-7B")
     parser.add_argument("--vis_save_path", default="./vis_output", type=str)
     parser.add_argument(
         "--precision",
@@ -49,7 +49,7 @@ def parse_args(args):
     parser.add_argument(
         "--vision-tower", default="/datas/huggingface/clip-vit-large-patch14-336", type=str
     )
-    parser.add_argument("--vision-tower-aux", default="/datas/caidexian/CLIP-convnext_large_d_320-laion2B-s29B-b131K-ft-soup", type=str)
+    parser.add_argument("--vision-tower-aux", default="/datas/CLIP-convnext_large_d_320-laion2B-s29B-b131K-ft-soup", type=str)
     parser.add_argument("--local-rank", default=0, type=int, help="node rank")
     parser.add_argument("--load_in_8bit", action="store_true", default=False)
     parser.add_argument("--load_in_4bit", action="store_true", default=False)
@@ -422,7 +422,7 @@ def main(args):
     
     model.eval()
     #加载测试集
-    with open('/datas/caidexian/myfiles/processed_val_02.json','r') as f:
+    with open('/datas/myfiles/processed_val_02.json','r') as f:
         multiturn_data = json.load(f)
     mask_data = '/datas/multimodal_datasets/GRESDataset/multiturn/Multiturn/val/masks'
     base_image_dir = '/datas/multimodal_datasets/GRESDataset/multiturn/Multiturn/val'
