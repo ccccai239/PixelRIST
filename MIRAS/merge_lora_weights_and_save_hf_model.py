@@ -72,7 +72,7 @@ def parse_args(args):
     parser.add_argument("--optimize_vision_tower_aux",default=False, type=bool)
     #parser.add_argument("--mm_use_im_start_end", action="store_true", default=False)
     #parser.add_argument("--mm_use_im_patch_token", action="store_true", default=True)
-    parser.add_argument("--pretrain_mm_mlp_adapter", default="/datas/caidexian/mm_7b_projector.bin", type=str)
+    parser.add_argument("--pretrain_mm_mlp_adapter", default="/datas/mm_7b_projector.bin", type=str)
     return parser.parse_args(args)
 
 
