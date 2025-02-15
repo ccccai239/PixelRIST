@@ -1,5 +1,5 @@
 #! /bin/bash
-cd /datas/caidexian/MGM_/MIRAS
+cd /datas/MGM_/MIRAS
 nohup deepspeed --master_port=28999 --include localhost:0
 CUDA_VISIBLE_DEVICES=7 python3.12 
 deepspeed --master_port=28999 --include localhost:1 
