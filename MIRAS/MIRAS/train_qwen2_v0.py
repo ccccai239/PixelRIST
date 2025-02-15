@@ -21,8 +21,8 @@ from torch.utils.tensorboard import SummaryWriter
 from MGMSA import MgmsaForCausalLM
 from mgm import conversation as conversation_lib
 
-from MGMSA.utils.dataset import HybridDataset, ValDataset, collate_fn
-from MGMSA.utils.utils import (DEFAULT_IM_END_TOKEN, DEFAULT_IM_START_TOKEN,
+from MIRAS.utils.dataset import HybridDataset, ValDataset, collate_fn
+from MIRAS.utils.utils import (DEFAULT_IM_END_TOKEN, DEFAULT_IM_START_TOKEN,
                          AverageMeter, ProgressMeter, Summary, dict_to_cuda,
                          intersectionAndUnionGPU)
 
@@ -47,7 +47,7 @@ def parse_args(args):
     parser.add_argument(
         "--vision-tower", default="/datas/huggingface/clip-vit-large-patch14-336", type=str
     )
-    parser.add_argument("--vision-tower-aux", default="/datas/caidexian/CLIP-convnext_large_d_320-laion2B-s29B-b131K-ft-soup", type=str)
+    parser.add_argument("--vision-tower-aux", default="/datas/CLIP-convnext_large_d_320-laion2B-s29B-b131K-ft-soup", type=str)
     parser.add_argument("--load_in_8bit", action="store_true", default=False)
     parser.add_argument("--load_in_4bit", action="store_true", default=False)
     parser.add_argument(
