@@ -48,8 +48,8 @@ class MultiTurnDialogues(BaseModel):
     dialogues: List[MultiTurnDialogue]  # 多轮对话的列表
 
 client=OpenAI(
-    api_key = "sk-NoC9tBZ8i1SuUgnk741499454bC54fE993Fc2aD69e68D434",
-    base_url = "https://neudm.zeabur.app/v1"
+    api_key = "xxxxx",
+    base_url = "xxxx"
 )
 
 # Function to encode the image
@@ -59,7 +59,7 @@ def encode_image(image_path):
  
 fig_path='Processed'
  # 假设只有一张图像
-filename = '/data/caidexian/10037296734_0b7bcca795_z.jpg'  # 替换为你的图像文件名
+filename = '/data/10037296734_0b7bcca795_z.jpg'  # 替换为你的图像文件名
 image_path = os.path.join(fig_path, filename)
 base64_image = encode_image(image_path)
 
