@@ -17,8 +17,8 @@ from MGMSA_v1 import MgmsaForCausalLM
 from mgm import conversation as conversation_lib
 #from model.MGMSA_v1 import MgmsaForCausalLM
 #from model.mgm import conversation as conversation_lib
-from MGMSA.utils.dataset_v1 import HybridDataset, ValDataset, collate_fn
-from MGMSA.utils.utils_v1 import (DEFAULT_IM_END_TOKEN, DEFAULT_IM_START_TOKEN,
+from MIRAS.utils.dataset_v1 import HybridDataset, ValDataset, collate_fn
+from MIRAS.utils.utils_v1 import (DEFAULT_IM_END_TOKEN, DEFAULT_IM_START_TOKEN,
                          OBJECT_NAME_START,
                          AverageMeter, ProgressMeter, Summary, dict_to_cuda,
                          intersectionAndUnionGPU)
@@ -43,7 +43,7 @@ def parse_args(args):
     parser.add_argument(
         "--vision-tower", default="/datas/huggingface/clip-vit-large-patch14-336", type=str
     )
-    parser.add_argument("--vision-tower-aux", default="/datas/caidexian/CLIP-convnext_large_d_320-laion2B-s29B-b131K-ft-soup", type=str)
+    parser.add_argument("--vision-tower-aux", default="/datas/CLIP-convnext_large_d_320-laion2B-s29B-b131K-ft-soup", type=str)
     parser.add_argument("--load_in_8bit", action="store_true", default=False)
     parser.add_argument("--load_in_4bit", action="store_true", default=False)
     parser.add_argument(
