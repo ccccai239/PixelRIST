@@ -40,7 +40,7 @@ def init_mapillary(base_image_dir):
 
 
 def init_ade20k(base_image_dir):
-    with open("/datas/caidexian/MGM_/MGMSA/utils/ade20k_classes.json", "r") as f:
+    with open("/datas/MGM_/MGMSA/utils/ade20k_classes.json", "r") as f:
         ade20k_classes = json.load(f)
     ade20k_classes = np.array(ade20k_classes)
     image_ids = sorted(
@@ -71,7 +71,7 @@ def init_ade20k(base_image_dir):
 
 def init_cocostuff(base_image_dir):
     cocostuff_classes = []
-    with open("/datas/caidexian/MGM_/MGMSA/utils/cocostuff_classes.txt") as f:
+    with open("/datas/MGM_/MGMSA/utils/cocostuff_classes.txt") as f:
         for line in f.readlines()[1:]:
             cocostuff_classes.append(line.strip().split(": ")[-1])
     cocostuff_classes = np.array(cocostuff_classes)
