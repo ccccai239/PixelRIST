@@ -49,7 +49,7 @@ class MultistepsDataset(torch.utils.data.Dataset):
         num_classes_per_sample: int = 3,
         exclude_val=False,
         reason_seg_data="/datas/multimodal_datasets/DenseFusion-1M/mask_new",
-        multistep_reason_data="/datas/caidexian/MGM_/densefusion_bbox_noobj.jsonl",
+        multistep_reason_data="/datas/MGM_/densefusion_bbox_noobj.jsonl",
         #explanatory=0.1,
         args=None,
     ): 
